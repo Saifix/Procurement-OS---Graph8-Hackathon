@@ -1,0 +1,12 @@
+# dependencies and build output
+node_modules
+dist
+
+# secrets — the real key lives here, .env.example is the template
+.env
+.env.local
+
+# generated during test runs, not source
+screenshots/
+.tmp/
+*.log

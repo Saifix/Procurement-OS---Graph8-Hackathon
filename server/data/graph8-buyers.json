@@ -1,0 +1,337 @@
+{
+  "meta": {
+    "harvestedAt": "2026-09-27",
+    "source": "graph8 g8_find_contacts (live)",
+    "org": "org_5cb9365b7d52",
+    "note": "Real companies and real category-buying contacts returned by live graph8 queries. Presence here means graph8 found the company and a person who works there — it does NOT mean they buy this product, have an open tender, or want to be contacted.",
+    "query": "country=United States; company_industry contains Retail Groceries / Wholesale / Food and Beverage Services; job_title contains Category Manager / Buyer / Procurement / Merchandising / Sourcing",
+    "totalMatches": 10000,
+    "contactNote": "Company records, scores and channel tags are as discovered through graph8. Individual contacts have been replaced with role-only placeholders for public release."
+  },
+  "buyers": [
+    {
+      "id": "byr_acme",
+      "provenance": "graph8_live",
+      "company": "Acme Fresh Market",
+      "domain": "acmestores.com",
+      "industry": "Retail Groceries",
+      "employeeCount": "501-1000",
+      "state": "Ohio",
+      "country": "United States",
+      "channelTags": [
+        "grocery_retail",
+        "regional_chain"
+      ],
+      "contact": {
+        "firstName": "Category",
+        "lastName": "Manager",
+        "jobTitle": "Category Manager / Buyer",
+        "seniority": "Senior",
+        "confidenceScore": 85,
+        "hasWorkEmail": true,
+        "hasDirectPhone": false,
+        "linkedinUrl": null
+      }
+    },
+    {
+      "id": "byr_quality",
+      "provenance": "graph8_live",
+      "company": "Quality Food Company",
+      "domain": "qualityfoodcompany.com",
+      "industry": "Food and Beverage Services",
+      "employeeCount": "51-200",
+      "state": "Rhode Island",
+      "country": "United States",
+      "channelTags": [
+        "foodservice_distributor"
+      ],
+      "contact": {
+        "firstName": "Buyer",
+        "lastName": "Contact",
+        "jobTitle": "Buyer / Category Manager",
+        "seniority": "Experienced Manager",
+        "confidenceScore": 85,
+        "hasWorkEmail": true,
+        "hasDirectPhone": true,
+        "linkedinUrl": null
+      }
+    },
+    {
+      "id": "byr_freshrealm",
+      "provenance": "graph8_live",
+      "company": "FreshRealm",
+      "domain": "freshrealm.co",
+      "industry": "Food and Beverage Services",
+      "employeeCount": "201-500",
+      "state": "California",
+      "country": "United States",
+      "channelTags": [
+        "meal_solutions",
+        "co_manufacturer"
+      ],
+      "contact": {
+        "firstName": "Buyer",
+        "lastName": "Contact",
+        "jobTitle": "Buyer / Sourcing",
+        "seniority": "Senior",
+        "confidenceScore": 82,
+        "hasWorkEmail": true,
+        "hasDirectPhone": false,
+        "linkedinUrl": null
+      }
+    },
+    {
+      "id": "byr_holiday",
+      "provenance": "graph8_live",
+      "company": "Holiday Wholesale, Inc.",
+      "domain": "holidaywholesale.com",
+      "industry": "Wholesale",
+      "employeeCount": "51-200",
+      "state": "Wisconsin",
+      "country": "United States",
+      "channelTags": [
+        "grocery_wholesaler",
+        "convenience"
+      ],
+      "contact": {
+        "firstName": "Category",
+        "lastName": "Manager",
+        "jobTitle": "Category Manager / Buyer",
+        "seniority": "Senior",
+        "confidenceScore": 82,
+        "hasWorkEmail": true,
+        "hasDirectPhone": false,
+        "linkedinUrl": null
+      }
+    },
+    {
+      "id": "byr_imperial",
+      "provenance": "graph8_live",
+      "company": "Imperial Trading",
+      "domain": "imperialtrading.com",
+      "industry": "Food and Beverage Services",
+      "employeeCount": "201-500",
+      "state": "Georgia",
+      "country": "United States",
+      "channelTags": [
+        "convenience_distributor",
+        "grocery_wholesaler"
+      ],
+      "contact": {
+        "firstName": "Buyer",
+        "lastName": "Contact",
+        "jobTitle": "Buyer / Category Manager",
+        "seniority": "Experienced Manager",
+        "confidenceScore": 75,
+        "hasWorkEmail": true,
+        "hasDirectPhone": false,
+        "linkedinUrl": null
+      }
+    },
+    {
+      "id": "byr_reinhart",
+      "provenance": "graph8_live",
+      "company": "Reinhart Foodservice",
+      "domain": "rfsdelivers.com",
+      "industry": "Food and Beverage Services",
+      "employeeCount": "1001-5000",
+      "state": "Wisconsin",
+      "country": "United States",
+      "channelTags": [
+        "foodservice_distributor",
+        "national"
+      ],
+      "contact": {
+        "firstName": "Buyer",
+        "lastName": "Contact",
+        "jobTitle": "Buyer / Merchandising",
+        "seniority": "Experienced Manager",
+        "confidenceScore": 65,
+        "hasWorkEmail": true,
+        "hasDirectPhone": false,
+        "linkedinUrl": null
+      }
+    },
+    {
+      "id": "byr_melissas",
+      "provenance": "graph8_live",
+      "company": "Melissa's Produce",
+      "domain": "melissas.com",
+      "industry": "Food and Beverage Services",
+      "employeeCount": "51-200",
+      "state": "California",
+      "country": "United States",
+      "channelTags": [
+        "specialty_distributor",
+        "produce"
+      ],
+      "contact": {
+        "firstName": "Procurement",
+        "lastName": "- Buyer and Category Manager",
+        "jobTitle": "Procurement - Buyer & Category Manager",
+        "seniority": "Experienced Manager",
+        "confidenceScore": 60,
+        "hasWorkEmail": true,
+        "hasDirectPhone": false,
+        "linkedinUrl": null
+      }
+    },
+    {
+      "id": "byr_unified",
+      "provenance": "graph8_live",
+      "company": "Unified Grocers",
+      "domain": "unifiedgrocers.com",
+      "industry": "Wholesale",
+      "employeeCount": "501-1000",
+      "state": "Washington",
+      "country": "United States",
+      "channelTags": [
+        "grocery_wholesaler",
+        "cooperative"
+      ],
+      "contact": {
+        "firstName": "Buyer",
+        "lastName": "Contact",
+        "jobTitle": "Buyer / Category Manager",
+        "seniority": "Experienced Manager",
+        "confidenceScore": 40,
+        "hasWorkEmail": false,
+        "hasDirectPhone": false,
+        "linkedinUrl": null
+      }
+    },
+    {
+      "id": "byr_urm",
+      "provenance": "graph8_live",
+      "company": "URM Stores Inc",
+      "domain": "urmstores.com",
+      "industry": "Wholesale",
+      "employeeCount": "201-500",
+      "state": "Washington",
+      "country": "United States",
+      "channelTags": [
+        "grocery_wholesaler",
+        "cooperative"
+      ],
+      "contact": {
+        "firstName": "Category",
+        "lastName": "Manager",
+        "jobTitle": "Category Manager / Buyer",
+        "seniority": "Senior",
+        "confidenceScore": 30,
+        "hasWorkEmail": true,
+        "hasDirectPhone": false,
+        "linkedinUrl": null
+      }
+    },
+    {
+      "id": "byr_musco",
+      "provenance": "graph8_live",
+      "company": "Musco Food Corporation",
+      "domain": "muscofood.com",
+      "industry": "Wholesale",
+      "employeeCount": "11-50",
+      "state": "",
+      "country": "United States",
+      "channelTags": [
+        "specialty_distributor",
+        "italian_foods"
+      ],
+      "contact": {
+        "firstName": "Buyer",
+        "lastName": "and Category Manager",
+        "jobTitle": "Buyer & Category Manager",
+        "seniority": "Experienced Manager",
+        "confidenceScore": 40,
+        "hasWorkEmail": true,
+        "hasDirectPhone": true,
+        "linkedinUrl": null
+      }
+    },
+    {
+      "id": "byr_awg",
+      "provenance": "graph8_live",
+      "company": "Associated Wholesale Grocers",
+      "domain": "awginc.com",
+      "industry": "Wholesale",
+      "employeeCount": "1001-5000",
+      "state": "Texas",
+      "country": "United States",
+      "channelTags": [
+        "grocery_wholesaler",
+        "cooperative",
+        "national"
+      ],
+      "contact": {
+        "firstName": "Vice",
+        "lastName": "President Sales and Marketing",
+        "jobTitle": "Vice President Sales & Marketing",
+        "seniority": "Vice President",
+        "confidenceScore": 80,
+        "hasWorkEmail": true,
+        "hasDirectPhone": false,
+        "linkedinUrl": null
+      }
+    },
+    {
+      "id": "byr_justcandy",
+      "provenance": "graph8_live",
+      "company": "Just Candy",
+      "domain": "whcandy.com",
+      "industry": "Food and Beverage Services",
+      "employeeCount": "11-50",
+      "state": "Florida",
+      "country": "United States",
+      "channelTags": [
+        "specialty_distributor",
+        "confectionery"
+      ],
+      "contact": {
+        "firstName": "Sourcing",
+        "lastName": "and Category Manager",
+        "jobTitle": "Sourcing & Category Manager",
+        "seniority": "Experienced Manager",
+        "confidenceScore": 65,
+        "hasWorkEmail": true,
+        "hasDirectPhone": false,
+        "linkedinUrl": null
+      }
+    }
+  ],
+  "products": [
+    {
+      "id": "sku_ketchup500",
+      "name": "Tomato Ketchup 500 ml",
+      "pack": "500 ml PET bottle, 12-count corrugated shipper",
+      "productCategory": "Ambient condiments",
+      "capacity": "9,800 bottles/day on the Kabirwala line, roughly 2.9M units/year at current staffing",
+      "leadTime": "28 days from purchase order to despatch",
+      "certifications": "HACCP, ISO 22000, Halal",
+      "pricing": "Positioned below national brands, above private-label economy tier",
+      "differentiators": "Recyclable mono-material closure; 28-30% Brix paste for a thicker pour; private-label and co-pack both available; dual-plant redundancy so a single shutdown does not stop supply",
+      "targetChannels": [
+        "grocery_retail",
+        "grocery_wholesaler",
+        "foodservice_distributor",
+        "convenience_distributor"
+      ],
+      "provenance": "demo"
+    },
+    {
+      "id": "sku_sauce1l",
+      "name": "Tomato Cooking Sauce 1 L",
+      "pack": "1 L PET bottle, 8-count shipper",
+      "productCategory": "Ambient cooking sauces",
+      "capacity": "4,200 bottles/day, shares the Kabirwala filling line",
+      "leadTime": "35 days from purchase order to despatch",
+      "certifications": "HACCP, ISO 22000, Halal",
+      "pricing": "Value tier, aimed at foodservice and catering volume",
+      "differentiators": "Catering pack size at retail cost base; same tomato paste supply chain as the ketchup line so quality is consistent across both",
+      "targetChannels": [
+        "foodservice_distributor",
+        "grocery_wholesaler"
+      ],
+      "provenance": "demo"
+    }
+  ]
+}

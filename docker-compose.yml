@@ -1,0 +1,85 @@
+services:
+  # Real SMTP server + web inbox, bundled so `docker compose up` still gives a
+  # fully working outbound channel with nothing to configure. Mailpit accepts
+  # mail over SMTP and serves it at :8025 — genuine delivery to a demo inbox
+  # rather than to the public internet.
+  mail:
+    image: axllent/mailpit:latest
+    container_name: procurement-mail
+    ports:
+      - "${MAIL_UI_PORT:-8025}:8025"
+    environment:
+      MP_MAX_MESSAGES: "500"
+      MP_SMTP_AUTH_ACCEPT_ANY: "true"
+      MP_SMTP_AUTH_ALLOW_INSECURE: "true"
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "/mailpit", "readyz"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+      start_period: 3s
+
+  # Self-hosted Postgres. Every workspace record lands here in a real table,
+  # which is also what the chat agent runs SQL against.
+  db:
+    image: postgres:17-alpine
+    container_name: procurement-db
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-procurement}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-procurement}
+      POSTGRES_DB: ${POSTGRES_DB:-procurement}
+    ports:
+      - "${DB_PORT:-5433}:5432"
+    volumes:
+      - procurement-pgdata:/var/lib/postgresql/data
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-procurement} -d ${POSTGRES_DB:-procurement}"]
+      interval: 5s
+      timeout: 4s
+      retries: 12
+      start_period: 5s
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: procurement-os:latest
+    container_name: procurement-os
+    depends_on:
+      mail:
+        condition: service_healthy
+      db:
+        condition: service_healthy
+    ports:
+      - "${APP_PORT:-8080}:8080"
+    env_file:
+      - .env
+    environment:
+      PORT: "8080"
+      STATE_DIR: /app/state
+      DATABASE_URL: ${DATABASE_URL:-postgres://procurement:procurement@db:5432/procurement}
+      LOG_REQUESTS: ${LOG_REQUESTS:-true}
+      # Outbound RFQ channel. Points at the bundled mail server by default;
+      # swap in a real relay URL and the same code path delivers for real.
+      DEMO_SMTP_URL: ${DEMO_SMTP_URL:-smtp://mail:1025}
+      DEMO_INBOX_URL: ${DEMO_INBOX_URL:-http://localhost:8025}
+      DEMO_FROM_ADDRESS: ${DEMO_FROM_ADDRESS:-procurement@nestle-demo.local}
+      DEMO_REPLY_DELAY_SECONDS: ${DEMO_REPLY_DELAY_SECONDS:-6}
+      GRAPH8_API_KEY: ${GRAPH8_API_KEY:-}
+      GRAPH8_API_BASE: ${GRAPH8_API_BASE:-https://be.graph8.com/api/v1}
+      GRAPH8_INTAKE_SKILL_ID: ${GRAPH8_INTAKE_SKILL_ID:-2730f9a5-a7ee-4159-9396-986bd1be7cfa}
+    volumes:
+      - procurement-state:/app/state
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://127.0.0.1:8080/api/health').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"]
+      interval: 10s
+      timeout: 4s
+      retries: 5
+      start_period: 5s
+
+volumes:
+  procurement-state:
+  procurement-pgdata:

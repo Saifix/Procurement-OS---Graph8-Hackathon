@@ -1,0 +1,537 @@
+{
+  "meta": {
+    "harvestedAt": "2026-09-27",
+    "source": "graph8 g8_find_contacts (live)",
+    "org": "org_5cb9365b7d52",
+    "note": "Companies and contacts below were returned by live graph8 queries. materialTags are assigned by THIS application to make matching work; graph8 does not state what a company can supply. A graph8 result is a potential supplier only.",
+    "queries": [
+      {
+        "id": "q_pack",
+        "filters": "country=United States; company_industry contains 'Packaging and Containers Manufacturing'; job_title contains Sales/Account Manager/Business Development",
+        "totalMatches": 10000
+      },
+      {
+        "id": "q_food",
+        "filters": "country=United States; company_industry contains 'Food and Beverage Manufacturing'; job_title contains Sales Manager/Account Manager/Business Development Manager/Director of Sales",
+        "totalMatches": 10000
+      },
+      {
+        "id": "q_name",
+        "filters": "country=United States; company_name contains Tomato/Ingredient/Spice/Flavor",
+        "totalMatches": 2769
+      }
+    ],
+    "contactNote": "Company records, scores and channel tags are as discovered through graph8. Individual contacts have been replaced with role-only placeholders for public release."
+  },
+  "suppliers": [
+    {
+      "id": "g8_victory",
+      "queryId": "q_pack",
+      "provenance": "graph8_live",
+      "company": "Victory Packaging",
+      "domain": "victorypackaging.com",
+      "industry": "Packaging and Containers Manufacturing",
+      "employeeCount": "1001-5000",
+      "state": "North Carolina",
+      "country": "United States",
+      "materialTags": [
+        "corrugated_case",
+        "shipper",
+        "packaging_general"
+      ],
+      "contact": {
+        "firstName": "Sales",
+        "lastName": "Business Development",
+        "jobTitle": "Sales, Business Development",
+        "seniority": "Entry Level",
+        "confidenceScore": 87,
+        "hasWorkEmail": true,
+        "hasDirectPhone": true,
+        "linkedinUrl": null
+      }
+    },
+    {
+      "id": "g8_greenbay",
+      "queryId": "q_pack",
+      "provenance": "graph8_live",
+      "company": "Green Bay Packaging",
+      "domain": "gbp.com",
+      "industry": "Packaging and Containers Manufacturing",
+      "employeeCount": "1001-5000",
+      "state": "Tennessee",
+      "country": "United States",
+      "materialTags": [
+        "corrugated_case",
+        "shipper",
+        "packaging_general"
+      ],
+      "contact": {
+        "firstName": "Business",
+        "lastName": "Development",
+        "jobTitle": "Business Development / Sales",
+        "seniority": "Entry Level",
+        "confidenceScore": 25,
+        "hasWorkEmail": true,
+        "hasDirectPhone": false,
+        "linkedinUrl": null
+      }
+    },
+    {
+      "id": "g8_rohrer",
+      "queryId": "q_pack",
+      "provenance": "graph8_live",
+      "company": "Rohrer Corporation",
+      "domain": "rohrer.com",
+      "industry": "Packaging and Containers Manufacturing",
+      "employeeCount": "201-500",
+      "state": "Ohio",
+      "country": "United States",
+      "materialTags": [
+        "label",
+        "printed_packaging",
+        "packaging_general"
+      ],
+      "contact": {
+        "firstName": "Sales",
+        "lastName": "Business Development",
+        "jobTitle": "Sales Business Development",
+        "seniority": "Entry Level",
+        "confidenceScore": 82,
+        "hasWorkEmail": true,
+        "hasDirectPhone": false,
+        "linkedinUrl": null
+      }
+    },
+    {
+      "id": "g8_packrite",
+      "queryId": "q_pack",
+      "provenance": "graph8_live",
+      "company": "Packrite, LLC",
+      "domain": "packrite.net",
+      "industry": "Packaging and Containers Manufacturing",
+      "employeeCount": "51-200",
+      "state": "North Carolina",
+      "country": "United States",
+      "materialTags": [
+        "corrugated_case",
+        "printed_packaging",
+        "packaging_general"
+      ],
+      "contact": {
+        "firstName": "Sales",
+        "lastName": "and Business Development",
+        "jobTitle": "Sales & Business Development",
+        "seniority": "Entry Level",
+        "confidenceScore": 45,
+        "hasWorkEmail": true,
+        "hasDirectPhone": true,
+        "linkedinUrl": null
+      }
+    },
+    {
+      "id": "g8_wasatch",
+      "queryId": "q_pack",
+      "provenance": "graph8_live",
+      "company": "Wasatch Container",
+      "domain": "wasatchcontainer.com",
+      "industry": "Packaging and Containers Manufacturing",
+      "employeeCount": "11-50",
+      "state": "",
+      "country": "United States",
+      "materialTags": [
+        "corrugated_case",
+        "shipper",
+        "packaging_general"
+      ],
+      "contact": {
+        "firstName": "Business",
+        "lastName": "Development Account Manager",
+        "jobTitle": "Business Development Account Manager",
+        "seniority": "Experienced Manager",
+        "confidenceScore": 90,
+        "hasWorkEmail": true,
+        "hasDirectPhone": true,
+        "linkedinUrl": null
+      }
+    },
+    {
+      "id": "g8_hfp",
+      "queryId": "q_pack",
+      "provenance": "graph8_live",
+      "company": "HFP",
+      "domain": "hfpusa.com",
+      "industry": "Packaging and Containers Manufacturing",
+      "employeeCount": "51-200",
+      "state": "",
+      "country": "United States",
+      "materialTags": [
+        "closure",
+        "bottle",
+        "packaging_general"
+      ],
+      "contact": {
+        "firstName": "Sales",
+        "lastName": "Business Development",
+        "jobTitle": "Sales Business Development",
+        "seniority": "Entry Level",
+        "confidenceScore": 65,
+        "hasWorkEmail": true,
+        "hasDirectPhone": false,
+        "linkedinUrl": null
+      }
+    },
+    {
+      "id": "g8_infinity",
+      "queryId": "q_pack",
+      "provenance": "graph8_live",
+      "company": "INFINITY GLOBAL",
+      "domain": "infinityglobal.com",
+      "industry": "Packaging and Containers Manufacturing",
+      "employeeCount": "201-500",
+      "state": "",
+      "country": "United States",
+      "materialTags": [
+        "bottle",
+        "closure",
+        "packaging_general"
+      ],
+      "contact": {
+        "firstName": "Business",
+        "lastName": "Development Account Manager",
+        "jobTitle": "Business Development Account Manager",
+        "seniority": "Experienced Manager",
+        "confidenceScore": 55,
+        "hasWorkEmail": true,
+        "hasDirectPhone": false,
+        "linkedinUrl": null
+      }
+    },
+    {
+      "id": "g8_custeq",
+      "queryId": "q_pack",
+      "provenance": "graph8_live",
+      "company": "Custom Equipment Company",
+      "domain": "cecmhs.com",
+      "industry": "Packaging and Containers Manufacturing",
+      "employeeCount": "11-50",
+      "state": "South Carolina",
+      "country": "United States",
+      "materialTags": [
+        "spare_part",
+        "packaging_general"
+      ],
+      "contact": {
+        "firstName": "Sales",
+        "lastName": "| Business Development",
+        "jobTitle": "Sales | Business Development",
+        "seniority": "Entry Level",
+        "confidenceScore": 95,
+        "hasWorkEmail": true,
+        "hasDirectPhone": true,
+        "linkedinUrl": null
+      }
+    },
+    {
+      "id": "g8_keystone",
+      "queryId": "q_pack",
+      "provenance": "graph8_live",
+      "company": "Keystone Foam",
+      "domain": "keystonefoam.com",
+      "industry": "Packaging and Containers Manufacturing",
+      "employeeCount": "51-200",
+      "state": "",
+      "country": "United States",
+      "materialTags": [
+        "protective_packaging",
+        "packaging_general"
+      ],
+      "contact": {
+        "firstName": "Business",
+        "lastName": "Development Account Manager",
+        "jobTitle": "Business Development Account Manager",
+        "seniority": "Experienced Manager",
+        "confidenceScore": 0,
+        "hasWorkEmail": false,
+        "hasDirectPhone": false,
+        "linkedinUrl": null
+      }
+    },
+    {
+      "id": "g8_dunnage",
+      "queryId": "q_pack",
+      "provenance": "graph8_live",
+      "company": "International Dunnage",
+      "domain": "internationaldunnage.com",
+      "industry": "Packaging and Containers Manufacturing",
+      "employeeCount": "51-200",
+      "state": "",
+      "country": "United States",
+      "materialTags": [
+        "protective_packaging",
+        "shipper",
+        "packaging_general"
+      ],
+      "contact": {
+        "firstName": "Sales",
+        "lastName": "and Business Development",
+        "jobTitle": "Sales & Business Development",
+        "seniority": "Entry Level",
+        "confidenceScore": 40,
+        "hasWorkEmail": false,
+        "hasDirectPhone": false,
+        "linkedinUrl": null
+      }
+    },
+    {
+      "id": "g8_flavorpic",
+      "queryId": "q_name",
+      "provenance": "graph8_live",
+      "company": "Flavor Pic Tomato",
+      "domain": "flavorpic.com",
+      "industry": "",
+      "employeeCount": "",
+      "state": "Alabama",
+      "country": "United States",
+      "materialTags": [
+        "tomato_paste",
+        "ingredient_general"
+      ],
+      "contact": {
+        "firstName": "Owner",
+        "lastName": "Contact",
+        "jobTitle": "Owner / President",
+        "seniority": "Owner / Partner",
+        "confidenceScore": 60,
+        "hasWorkEmail": true,
+        "hasDirectPhone": false,
+        "linkedinUrl": null
+      }
+    },
+    {
+      "id": "g8_cacique",
+      "queryId": "q_food",
+      "provenance": "graph8_live",
+      "company": "Cacique Foods, LLC.",
+      "domain": "caciquefoods.com",
+      "industry": "Food and Beverage Manufacturing",
+      "employeeCount": "201-500",
+      "state": "",
+      "country": "United States",
+      "materialTags": [
+        "ingredient_general",
+        "spice_blend"
+      ],
+      "contact": {
+        "firstName": "Account",
+        "lastName": "Business Development Manager",
+        "jobTitle": "Account Business Development Manager",
+        "seniority": "Experienced Manager",
+        "confidenceScore": 65,
+        "hasWorkEmail": true,
+        "hasDirectPhone": true,
+        "linkedinUrl": null
+      }
+    },
+    {
+      "id": "g8_vernonwalden",
+      "queryId": "q_food",
+      "provenance": "graph8_live",
+      "company": "Vernon Walden Inc",
+      "domain": "vernonwalden.com",
+      "industry": "Food and Beverage Manufacturing",
+      "employeeCount": "1-10",
+      "state": "New Jersey",
+      "country": "United States",
+      "materialTags": [
+        "ingredient_general",
+        "vinegar",
+        "spice_blend"
+      ],
+      "contact": {
+        "firstName": "Sales",
+        "lastName": "and Business Development Manager",
+        "jobTitle": "Sales & Business Development Manager",
+        "seniority": "Experienced Manager",
+        "confidenceScore": 70,
+        "hasWorkEmail": true,
+        "hasDirectPhone": false,
+        "linkedinUrl": null
+      }
+    },
+    {
+      "id": "g8_farinart",
+      "queryId": "q_food",
+      "provenance": "graph8_live",
+      "company": "Farinart",
+      "domain": "farinart.com",
+      "industry": "Food and Beverage Manufacturing",
+      "employeeCount": "11-50",
+      "state": "",
+      "country": "United States",
+      "materialTags": [
+        "ingredient_general",
+        "sugar"
+      ],
+      "contact": {
+        "firstName": "Sales",
+        "lastName": "Business Development Manager",
+        "jobTitle": "Sales Business Development Manager",
+        "seniority": "Experienced Manager",
+        "confidenceScore": 40,
+        "hasWorkEmail": false,
+        "hasDirectPhone": true,
+        "linkedinUrl": null
+      }
+    },
+    {
+      "id": "g8_clemens",
+      "queryId": "q_food",
+      "provenance": "graph8_live",
+      "company": "Clemens Food Group",
+      "domain": "clemensfoodgroup.com",
+      "industry": "Food and Beverage Manufacturing",
+      "employeeCount": "1001-5000",
+      "state": "",
+      "country": "United States",
+      "materialTags": [
+        "ingredient_general"
+      ],
+      "contact": {
+        "firstName": "Regional",
+        "lastName": "Sales Manager",
+        "jobTitle": "Regional Sales Manager / Business Development Manager",
+        "seniority": "Experienced Manager",
+        "confidenceScore": 60,
+        "hasWorkEmail": true,
+        "hasDirectPhone": false,
+        "linkedinUrl": null
+      }
+    },
+    {
+      "id": "g8_artisan",
+      "queryId": "q_food",
+      "provenance": "graph8_live",
+      "company": "Artisan Kitchens",
+      "domain": "chooseartisan.com",
+      "industry": "Food and Beverage Manufacturing",
+      "employeeCount": "11-50",
+      "state": "South Carolina",
+      "country": "United States",
+      "materialTags": [
+        "ingredient_general",
+        "spice_blend"
+      ],
+      "contact": {
+        "firstName": "Business",
+        "lastName": "Development Account Manager",
+        "jobTitle": "Business Development Account Manager",
+        "seniority": "Experienced Manager",
+        "confidenceScore": 77,
+        "hasWorkEmail": true,
+        "hasDirectPhone": false,
+        "linkedinUrl": null
+      }
+    },
+    {
+      "id": "g8_baxter",
+      "queryId": "q_food",
+      "provenance": "graph8_live",
+      "company": "Baxter Manufacturing",
+      "domain": "baxtermfg.com",
+      "industry": "Food and Beverage Manufacturing",
+      "employeeCount": "51-200",
+      "state": "Washington",
+      "country": "United States",
+      "materialTags": [
+        "spare_part",
+        "ingredient_general"
+      ],
+      "contact": {
+        "firstName": "Business",
+        "lastName": "Development Manager",
+        "jobTitle": "Business Development Manager",
+        "seniority": "Experienced Manager",
+        "confidenceScore": 95,
+        "hasWorkEmail": true,
+        "hasDirectPhone": true,
+        "linkedinUrl": null
+      }
+    },
+    {
+      "id": "g8_gourmand",
+      "queryId": "q_food",
+      "provenance": "graph8_live",
+      "company": "Gourmand Pastries",
+      "domain": "gourmandpastries.com",
+      "industry": "Food and Beverage Manufacturing",
+      "employeeCount": "201-500",
+      "state": "Maryland",
+      "country": "United States",
+      "materialTags": [
+        "ingredient_general",
+        "sugar"
+      ],
+      "contact": {
+        "firstName": "Business",
+        "lastName": "Development Manager, Regional Sales Manager",
+        "jobTitle": "Business Development Manager, Regional Sales Manager",
+        "seniority": "Experienced Manager",
+        "confidenceScore": 95,
+        "hasWorkEmail": true,
+        "hasDirectPhone": true,
+        "linkedinUrl": null
+      }
+    },
+    {
+      "id": "g8_dongsheng",
+      "queryId": "q_food",
+      "provenance": "graph8_live",
+      "company": "Dongsheng Foods USA, Inc.",
+      "domain": "dongshengfoodsusa.com",
+      "industry": "Food and Beverage Manufacturing",
+      "employeeCount": "1-10",
+      "state": "Illinois",
+      "country": "United States",
+      "materialTags": [
+        "ingredient_general",
+        "spice_blend",
+        "vinegar"
+      ],
+      "contact": {
+        "firstName": "Sales",
+        "lastName": "and Business Development Manager",
+        "jobTitle": "Sales & Business Development Manager",
+        "seniority": "Experienced Manager",
+        "confidenceScore": 45,
+        "hasWorkEmail": false,
+        "hasDirectPhone": false,
+        "linkedinUrl": null
+      }
+    },
+    {
+      "id": "g8_divineflavor",
+      "queryId": "q_name",
+      "provenance": "graph8_live",
+      "company": "Divine Flavor",
+      "domain": "divineflavor.com",
+      "industry": "Retail Groceries",
+      "employeeCount": "51-200",
+      "state": "California",
+      "country": "United States",
+      "materialTags": [
+        "tomato_paste",
+        "ingredient_general"
+      ],
+      "contact": {
+        "firstName": "Sales",
+        "lastName": "And Business Development",
+        "jobTitle": "Sales And Business Development",
+        "seniority": "Entry Level",
+        "confidenceScore": 60,
+        "hasWorkEmail": true,
+        "hasDirectPhone": true,
+        "linkedinUrl": null
+      }
+    }
+  ]
+}

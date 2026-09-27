@@ -1,0 +1,443 @@
+{
+  "meta": {
+    "workspaceName": "Nestlé Procurement Demo",
+    "disclaimer": "Fictionalised demonstration workspace. Not an official Nestlé product and not connected to Nestlé's internal systems. All inventory, recipes, usage rates, demand, supplier quotes, costs and forecasts below are illustrative sample data, not Nestlé's confidential information.",
+    "currency": "USD",
+    "provenance": "demo"
+  },
+  "roles": [
+    {
+      "id": "requester",
+      "label": "Requirement Raiser",
+      "name": "Aisha Raza",
+      "title": "Production Planner, Kabirwala Plant",
+      "responsibilities": "Raise material requirements for the production line and track their progress through procurement."
+    },
+    {
+      "id": "officer",
+      "label": "Procurement Officer",
+      "name": "Daniel Okafor",
+      "title": "Procurement Officer, Direct Materials",
+      "responsibilities": "Review requirements, run supplier discovery, prepare RFQs, verify quotations and build a sourcing recommendation."
+    },
+    {
+      "id": "head",
+      "label": "Procurement Head",
+      "name": "Marta Lindqvist",
+      "title": "Head of Procurement",
+      "responsibilities": "See consolidated demand and risk, review agent recommendations, and approve, reject or return sourcing decisions."
+    },
+    {
+      "id": "planner",
+      "label": "Inventory Planner",
+      "name": "Tomás Ferreira",
+      "title": "Supply Chain Planner",
+      "responsibilities": "Monitor stock against the production plan, spot shortages early and convert reorder recommendations into requirements."
+    }
+  ],
+  "sites": [
+    {
+      "id": "site_kab",
+      "name": "Kabirwala Plant",
+      "country": "Pakistan"
+    },
+    {
+      "id": "site_shk",
+      "name": "Sheikhupura Plant",
+      "country": "Pakistan"
+    },
+    {
+      "id": "site_kar",
+      "name": "Karachi DC",
+      "country": "Pakistan"
+    }
+  ],
+  "categories": [
+    {
+      "id": "ingredient",
+      "label": "Ingredient"
+    },
+    {
+      "id": "raw_material",
+      "label": "Raw material"
+    },
+    {
+      "id": "packaging",
+      "label": "Packaging"
+    },
+    {
+      "id": "spare_part",
+      "label": "Spare part"
+    },
+    {
+      "id": "indirect",
+      "label": "Indirect material"
+    }
+  ],
+  "materials": [
+    {
+      "id": "mat_tomato",
+      "name": "Tomato Paste 28–30% Brix",
+      "category": "ingredient",
+      "uom": "kg",
+      "materialTag": "tomato_paste",
+      "safetyStock": 12000,
+      "leadTimeDays": 21,
+      "unitCostAssumption": 1.35,
+      "provenance": "demo"
+    },
+    {
+      "id": "mat_sugar",
+      "name": "Refined White Sugar",
+      "category": "ingredient",
+      "uom": "kg",
+      "materialTag": "sugar",
+      "safetyStock": 9000,
+      "leadTimeDays": 14,
+      "unitCostAssumption": 0.72,
+      "provenance": "demo"
+    },
+    {
+      "id": "mat_vinegar",
+      "name": "White Distilled Vinegar 10%",
+      "category": "ingredient",
+      "uom": "L",
+      "materialTag": "vinegar",
+      "safetyStock": 6000,
+      "leadTimeDays": 12,
+      "unitCostAssumption": 0.48,
+      "provenance": "demo"
+    },
+    {
+      "id": "mat_salt",
+      "name": "Food Grade Salt",
+      "category": "ingredient",
+      "uom": "kg",
+      "materialTag": "ingredient_general",
+      "safetyStock": 3000,
+      "leadTimeDays": 10,
+      "unitCostAssumption": 0.21,
+      "provenance": "demo"
+    },
+    {
+      "id": "mat_spice",
+      "name": "Ketchup Spice Blend",
+      "category": "ingredient",
+      "uom": "kg",
+      "materialTag": "spice_blend",
+      "safetyStock": 900,
+      "leadTimeDays": 28,
+      "unitCostAssumption": 6.4,
+      "provenance": "demo"
+    },
+    {
+      "id": "mat_bottle",
+      "name": "PET Bottle 500 ml",
+      "category": "packaging",
+      "uom": "pcs",
+      "materialTag": "bottle",
+      "safetyStock": 180000,
+      "leadTimeDays": 18,
+      "unitCostAssumption": 0.064,
+      "provenance": "demo"
+    },
+    {
+      "id": "mat_closure",
+      "name": "Flip-Top Closure 38 mm",
+      "category": "packaging",
+      "uom": "pcs",
+      "materialTag": "closure",
+      "safetyStock": 180000,
+      "leadTimeDays": 20,
+      "unitCostAssumption": 0.028,
+      "provenance": "demo"
+    },
+    {
+      "id": "mat_label",
+      "name": "Wrap-Around Label, 4-colour",
+      "category": "packaging",
+      "uom": "pcs",
+      "materialTag": "label",
+      "safetyStock": 200000,
+      "leadTimeDays": 15,
+      "unitCostAssumption": 0.011,
+      "provenance": "demo"
+    },
+    {
+      "id": "mat_case",
+      "name": "Corrugated Shipper Case, 12-count",
+      "category": "packaging",
+      "uom": "pcs",
+      "materialTag": "corrugated_case",
+      "safetyStock": 16000,
+      "leadTimeDays": 12,
+      "unitCostAssumption": 0.34,
+      "provenance": "demo"
+    }
+  ],
+  "products": [
+    {
+      "id": "prod_ketchup500",
+      "name": "Tomato Ketchup 500 ml",
+      "uom": "bottle",
+      "provenance": "demo",
+      "bomNote": "Illustrative recipe and ratios for demonstration. Not Nestlé's actual formulation.",
+      "bom": [
+        {
+          "materialId": "mat_tomato",
+          "qtyPerUnit": 0.168
+        },
+        {
+          "materialId": "mat_sugar",
+          "qtyPerUnit": 0.062
+        },
+        {
+          "materialId": "mat_vinegar",
+          "qtyPerUnit": 0.045
+        },
+        {
+          "materialId": "mat_salt",
+          "qtyPerUnit": 0.009
+        },
+        {
+          "materialId": "mat_spice",
+          "qtyPerUnit": 0.0022
+        },
+        {
+          "materialId": "mat_bottle",
+          "qtyPerUnit": 1
+        },
+        {
+          "materialId": "mat_closure",
+          "qtyPerUnit": 1
+        },
+        {
+          "materialId": "mat_label",
+          "qtyPerUnit": 1
+        },
+        {
+          "materialId": "mat_case",
+          "qtyPerUnit": 0.0834
+        }
+      ]
+    }
+  ],
+  "inventory": [
+    {
+      "materialId": "mat_tomato",
+      "siteId": "site_kab",
+      "onHand": 41200,
+      "reserved": 6800,
+      "provenance": "demo"
+    },
+    {
+      "materialId": "mat_sugar",
+      "siteId": "site_kab",
+      "onHand": 52000,
+      "reserved": 2400,
+      "provenance": "demo"
+    },
+    {
+      "materialId": "mat_vinegar",
+      "siteId": "site_kab",
+      "onHand": 38000,
+      "reserved": 1200,
+      "provenance": "demo"
+    },
+    {
+      "materialId": "mat_salt",
+      "siteId": "site_kab",
+      "onHand": 11400,
+      "reserved": 0,
+      "provenance": "demo"
+    },
+    {
+      "materialId": "mat_spice",
+      "siteId": "site_kab",
+      "onHand": 1850,
+      "reserved": 260,
+      "provenance": "demo"
+    },
+    {
+      "materialId": "mat_bottle",
+      "siteId": "site_kab",
+      "onHand": 412000,
+      "reserved": 48000,
+      "provenance": "demo"
+    },
+    {
+      "materialId": "mat_closure",
+      "siteId": "site_kab",
+      "onHand": 268000,
+      "reserved": 30000,
+      "provenance": "demo"
+    },
+    {
+      "materialId": "mat_label",
+      "siteId": "site_kab",
+      "onHand": 900000,
+      "reserved": 0,
+      "provenance": "demo"
+    },
+    {
+      "materialId": "mat_case",
+      "siteId": "site_kab",
+      "onHand": 24600,
+      "reserved": 3100,
+      "provenance": "demo"
+    }
+  ],
+  "expectedReceipts": [
+    {
+      "id": "rcpt_1",
+      "materialId": "mat_tomato",
+      "siteId": "site_kab",
+      "qty": 24000,
+      "expectedInDays": 19,
+      "supplierName": "Existing contract supplier",
+      "provenance": "demo"
+    },
+    {
+      "id": "rcpt_2",
+      "materialId": "mat_case",
+      "siteId": "site_kab",
+      "qty": 18000,
+      "expectedInDays": 9,
+      "supplierName": "Existing contract supplier",
+      "provenance": "demo"
+    }
+  ],
+  "productionPlan": {
+    "productId": "prod_ketchup500",
+    "siteId": "site_kab",
+    "horizonDays": 60,
+    "unitsPerDay": 9800,
+    "provenance": "demo",
+    "note": "Illustrative production volume. Edit it and every downstream projection recalculates."
+  },
+  "directorySuppliers": [
+    {
+      "id": "dir_alnoor",
+      "provenance": "demo",
+      "source": "directory",
+      "company": "Al-Noor Agro Processing",
+      "domain": "alnoor-agro.example",
+      "country": "Pakistan",
+      "state": "Punjab",
+      "materialTags": [
+        "tomato_paste",
+        "ingredient_general"
+      ],
+      "status": "Approved vendor",
+      "approvedSince": "2023-04-01",
+      "contact": {
+        "firstName": "Imran",
+        "lastName": "Qureshi",
+        "jobTitle": "Key Account Manager",
+        "hasWorkEmail": true,
+        "hasDirectPhone": true
+      }
+    },
+    {
+      "id": "dir_packwell",
+      "provenance": "demo",
+      "source": "directory",
+      "company": "Packwell Industries",
+      "domain": "packwell.example",
+      "country": "Pakistan",
+      "state": "Sindh",
+      "materialTags": [
+        "corrugated_case",
+        "label",
+        "packaging_general"
+      ],
+      "status": "Approved vendor",
+      "approvedSince": "2021-09-15",
+      "contact": {
+        "firstName": "Sana",
+        "lastName": "Malik",
+        "jobTitle": "Commercial Manager",
+        "hasWorkEmail": true,
+        "hasDirectPhone": true
+      }
+    },
+    {
+      "id": "dir_cristal",
+      "provenance": "demo",
+      "source": "directory",
+      "company": "Cristal PET Works",
+      "domain": "cristalpet.example",
+      "country": "Pakistan",
+      "state": "Punjab",
+      "materialTags": [
+        "bottle",
+        "closure",
+        "packaging_general"
+      ],
+      "status": "Conditional — audit due",
+      "approvedSince": "2024-11-02",
+      "contact": {
+        "firstName": "Bilal",
+        "lastName": "Hussain",
+        "jobTitle": "Sales Director",
+        "hasWorkEmail": true,
+        "hasDirectPhone": false
+      }
+    },
+    {
+      "id": "dir_sahiwal",
+      "provenance": "demo",
+      "source": "directory",
+      "company": "Sahiwal Foods & Ingredients",
+      "domain": "sahiwal-foods.example",
+      "country": "Pakistan",
+      "state": "Punjab",
+      "materialTags": [
+        "tomato_paste",
+        "sugar",
+        "vinegar",
+        "ingredient_general"
+      ],
+      "status": "Approved vendor",
+      "approvedSince": "2022-06-20",
+      "contact": {
+        "firstName": "Nadia",
+        "lastName": "Farooq",
+        "jobTitle": "Head of Sales",
+        "hasWorkEmail": true,
+        "hasDirectPhone": true
+      }
+    }
+  ],
+  "priceScenarios": [
+    {
+      "id": "ps_flat",
+      "label": "Flat — no change",
+      "changePct": 0,
+      "provenance": "demo"
+    },
+    {
+      "id": "ps_up8",
+      "label": "Seasonal rise +8%",
+      "changePct": 8,
+      "provenance": "demo"
+    },
+    {
+      "id": "ps_up15",
+      "label": "Tight harvest +15%",
+      "changePct": 15,
+      "provenance": "demo"
+    },
+    {
+      "id": "ps_down5",
+      "label": "Softening −5%",
+      "changePct": -5,
+      "provenance": "demo"
+    }
+  ],
+  "assumptions": {
+    "holdingCostPctPerMonth": 1.6,
+    "note": "Holding cost is a user-editable assumption used in buy-now vs buy-later comparisons. Not a market figure.",
+    "provenance": "demo"
+  }
+}
