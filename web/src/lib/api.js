@@ -1,9 +1,18 @@
 const BASE = '/api';
 
+/**
+ * Sent on every request. When the app is served through an ngrok free tunnel,
+ * ngrok answers browser-agent requests with an HTML interstitial instead of
+ * passing them through — which turns every API response into unparseable HTML
+ * and breaks the whole UI silently. This header opts out of it. It is ignored
+ * everywhere else, so it costs nothing to send always.
+ */
+const TUNNEL_HEADERS = { 'ngrok-skip-browser-warning': 'true' };
+
 async function req(path, options = {}) {
   const res = await fetch(BASE + path, {
-    headers: { 'Content-Type': 'application/json' },
     ...options,
+    headers: { 'Content-Type': 'application/json', ...TUNNEL_HEADERS, ...(options.headers || {}) },
     body: options.body ? JSON.stringify(options.body) : undefined,
   });
   const text = await res.text();

@@ -24,15 +24,53 @@ import { salesRouter } from './routes/sales.js';
 import { converse, TOOLS } from './domain/copilot.js';
 import { parseRequest } from './domain/intake.js';
 import { sendRFQ, sendDemoReply, buildDemoQuote, canAutoRespond, channelStatus, demoAddressFor } from './domain/mail.js';
+import { createProxyMiddleware } from 'http-proxy-middleware';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const PORT = Number(process.env.PORT || 8080);
 const WEB_DIST = join(__dirname, '..', 'public');
 
 const app = express();
+
+/**
+ * The demo mail inbox, served through this app at /inbox.
+ *
+ * Mailpit listens on its own port, which is fine on localhost but unreachable
+ * for anyone visiting through a tunnel or from another machine. Proxying it
+ * under our own origin means the "open the inbox" link works wherever the app
+ * is reachable, over one port, with websockets passed through so the inbox
+ * still updates live.
+ *
+ * MP_WEBROOT=/inbox on the Mailpit container makes it emit its asset paths
+ * under /inbox, so nothing needs rewriting here.
+ */
+const MAIL_UI_ORIGIN = process.env.MAIL_UI_ORIGIN || 'http://mail:8025';
+const mailProxy = createProxyMiddleware({
+  // Filtered at the root rather than mounted on '/inbox': express strips the
+  // mount path before the handler sees it, which would forward '/' to Mailpit
+  // and 404, since Mailpit serves everything under its own /inbox webroot.
+  pathFilter: (path) => path === '/inbox' || path.startsWith('/inbox/'),
+  target: MAIL_UI_ORIGIN,
+  changeOrigin: true,
+  ws: true,
+  on: {
+    error: (_err, _req, res) => {
+      if (res.writeHead) {
+        res.writeHead(502, { 'Content-Type': 'text/html' });
+        res.end('<h1>Mail inbox unavailable</h1><p>The Mailpit service is not running.</p>');
+      }
+    },
+  },
+});
+app.use(mailProxy);
+
 app.use(compression());
 app.use(express.json({ limit: '2mb' }));
 if (process.env.LOG_REQUESTS !== 'false') app.use(morgan('tiny'));
+
+// Behind ngrok or any reverse proxy, so req.protocol and the client IP are read
+// from the forwarded headers rather than the tunnel's own socket.
+app.set('trust proxy', true);
 
 const api = express.Router();
 const S = () => store.state;
@@ -1018,10 +1056,13 @@ if (db.isEnabled()) {
   await store.hydrateFromPostgres();
 }
 
-app.listen(PORT, '0.0.0.0', () => {
+const server = app.listen(PORT, '0.0.0.0', () => {
   console.log(`\n  Agentic Procurement OS`);
   console.log(`  ──────────────────────`);
   console.log(`  http://localhost:${PORT}`);
   console.log(`  workspace: ${store.workspace.meta.workspaceName}`);
   console.log(`  graph8 suppliers in index: ${store.graph8.suppliers.length}\n`);
 });
+
+// Mailpit's live-update websocket, passed through the same origin.
+server.on('upgrade', mailProxy.upgrade);

@@ -12,6 +12,9 @@ services:
       MP_MAX_MESSAGES: "500"
       MP_SMTP_AUTH_ACCEPT_ANY: "true"
       MP_SMTP_AUTH_ALLOW_INSECURE: "true"
+      # Served through the app at /inbox, so the link works from any host
+      # the app is reachable on rather than only from localhost.
+      MP_WEBROOT: "/inbox"
     restart: unless-stopped
     healthcheck:
       test: ["CMD", "/mailpit", "readyz"]
@@ -64,7 +67,7 @@ services:
       # Outbound RFQ channel. Points at the bundled mail server by default;
       # swap in a real relay URL and the same code path delivers for real.
       DEMO_SMTP_URL: ${DEMO_SMTP_URL:-smtp://mail:1025}
-      DEMO_INBOX_URL: ${DEMO_INBOX_URL:-http://localhost:8025}
+      DEMO_INBOX_URL: ${DEMO_INBOX_URL:-/inbox}
       DEMO_FROM_ADDRESS: ${DEMO_FROM_ADDRESS:-procurement@nestle-demo.local}
       DEMO_REPLY_DELAY_SECONDS: ${DEMO_REPLY_DELAY_SECONDS:-6}
       GRAPH8_API_KEY: ${GRAPH8_API_KEY:-}

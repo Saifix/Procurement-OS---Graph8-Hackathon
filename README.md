@@ -9,7 +9,14 @@ sourcing decision, and plan material cover from an editable production plan.
 > rates, demand, supplier quotes, costs and forecasts are illustrative sample
 > data, not Nestlé's confidential information.
 
-**Presentation:** https://canva.link/we84iy84ftpivj8
+- **Live demo** — https://285c-2400-adc5-47c-2300-cb2-c1f6-eb54-6275.ngrok-free.app
+- **Presentation** — https://canva.link/we84iy84ftpivj8
+
+The live demo is a local instance exposed through an ngrok tunnel, so the URL
+changes whenever the tunnel restarts. Everything works over it: the copilot,
+graph8 supplier and buyer research, RFQs over SMTP, and the mail inbox at
+[`/inbox`](https://285c-2400-adc5-47c-2300-cb2-c1f6-eb54-6275.ngrok-free.app/inbox).
+On first visit ngrok shows its own warning page — click through it once.
 
 ---
 
@@ -21,7 +28,8 @@ docker compose up -d --wait
 ```
 
 Open **http://localhost:8080** and pick a role.
-The demo mail inbox is at **http://localhost:8025**.
+The demo mail inbox is at **http://localhost:8080/inbox** (also proxied on
+8025 directly).
 
 ```bash
 docker compose logs -f app       # follow logs
